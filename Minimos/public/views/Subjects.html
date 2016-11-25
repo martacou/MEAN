@@ -1,0 +1,48 @@
+<div ng-controller="SubjectsCtrl">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Subjects</h1>
+    <br>
+    <h2>Create new subject</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name of the subject</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <td>
+            <input class="form-control" ng-model="NewSubject.name">
+        </td>
+
+        <td>
+            <button class="btn btn-primary" ng-click="CreateSubject()">Create subject</button>
+        </td>
+        </tbody>
+    </table>
+
+    <h2>List of subjects</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Subject name</th>
+            <th>More...</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="subject in subjects ">
+            <td>{{subject.name}}</td>
+            <td>
+                <a class="glyphicon glyphicon-plus" href="#/subjects/{{subject._id}}"></a>
+            </td>
+            <td>
+            <td>
+                <button class="btn btn-danger" ng-click="DeleteSubject(subject._id)">Delete Subject</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
